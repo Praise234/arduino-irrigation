@@ -1,20 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Home from "./Screens/Home";
+import { NavigationContainer } from "@react-navigation/native";
+import SoilMoisture from "./Screens/SoilMoisture";
+import Irrigation from "./Screens/Irrigation";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
+
+  
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+     <Tab.Navigator screenOptions={{
+      tabBarLabelPosition: "below-icon",
+      tabBarShowLabel: true,
+      tabBarActiveTintColor: "#708238",
+      tabBarInactiveTintColor: "#8F9779",
+      }}>
+
+      <Tab.Screen name="Home" component={Home}
+      options={{
+        tabBarLabel: "Home",
+        tabBarIcon: ({ color }) => (<Ionicons name="home" size={20} color={color} />),
+        headerShown:false
+      }}
+      />
+      <Tab.Screen name="Soil Moisture" component={SoilMoisture} PRAISE
+      options={{
+        tabBarLabel: "Soil Moisture",
+        tabBarIcon: ({ color }) => (<Ionicons name="snow" size={20} color={color} />),
+      }}
+      />
+      <Tab.Screen name="Irrigation" component={Irrigation} 
+      options={{
+        tabBarLabel: "Irrigation",
+        tabBarIcon: ({ color }) => (<Ionicons name="water" size={20} color={color} />),
+      }}
+      />
+    </Tab.Navigator>
+   </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
