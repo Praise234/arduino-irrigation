@@ -13,7 +13,7 @@ export default function SoilMoisture() {
   
   
   useEffect(() => {
-    const startInterval = setInterval(() => fetchData(), 30000);
+    const startInterval = setInterval(() => fetchData(), 3000);
 
 
     return () => {
@@ -38,7 +38,7 @@ export default function SoilMoisture() {
     }
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   const [selectedCrop, setSelectedCrop] = useState('ball_pepper');
   
@@ -73,9 +73,9 @@ export default function SoilMoisture() {
                 )
               }
             </CircularProgress>
-            <TouchableOpacity style={styles.button} >
+            {/* <TouchableOpacity style={styles.button} >
               <Text style={styles.buttonText}>Irrigate</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
       );

@@ -19,7 +19,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import axios from 'axios';
 import * as Location from 'expo-location';
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function Home() {
 
