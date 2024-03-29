@@ -1,6 +1,6 @@
 import { Picker } from '@react-native-picker/picker';
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { CircularProgress } from 'react-native-circular-progress';
 import { vh, vw } from '../utils/functions';
 
@@ -45,7 +45,7 @@ export default function SoilMoisture() {
     return (
         <View style={styles.container}>
           <View style= {{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10}}>
-            <Text style={{fontWeight: "600", fontSize: 15}}>SOIL</Text>
+            <Text style={{fontWeight: "600", fontSize: 15}}>PLANT</Text>
             <View style={[styles.theInput, { height:vh(55), width: vw(250) }]}>
               <Picker
               style = {styles.cropSelect}
@@ -53,7 +53,7 @@ export default function SoilMoisture() {
                 onValueChange={(itemValue, itemIndex) =>
                   setSelectedCrop(itemValue)
                 }>
-                <Picker.Item label="Ball Pepper" value="ball_pepper" />
+                <Picker.Item label="Bell Pepper" value="ball_pepper" />
               </Picker>
             </View>
           </View>
@@ -69,7 +69,7 @@ export default function SoilMoisture() {
             >
               {
                 (fill) => (
-                  <Text style={styles.moistureText}>{`${fill} wfv`}</Text> // You can customize the content inside the circular progress
+                  <Text style={styles.moistureText}>{`${fill} %`}</Text> // You can customize the content inside the circular progress
                 )
               }
             </CircularProgress>

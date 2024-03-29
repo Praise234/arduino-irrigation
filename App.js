@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./Screens/Home";
+// import Home from "./Screens/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import SoilMoisture from "./Screens/SoilMoisture";
 import Irrigation from "./Screens/Irrigation";
@@ -36,13 +36,13 @@ export default function App() {
           
         }}
         />
-      <Tab.Screen name="Home" component={Home}
+      {/* <Tab.Screen name="Home" component={Home}
       options={{
         tabBarLabel: "Weather",
         tabBarIcon: ({ color }) => (<Ionicons name="thunderstorm" size={20} color={color} />),
         headerShown:false
       }}
-      />
+      /> */}
     </Tab.Navigator>
    </NavigationContainer>
   );

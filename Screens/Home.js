@@ -1,25 +1,10 @@
-import { Button, FlatList, Image, ImageBackground, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import {  FlatList, Image,  SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons";
-// import { useFonts } from 'expo-font';
-import { 
-  useFonts,
-  Lato_100Thin,
-  Lato_100Thin_Italic,
-  Lato_300Light,
-  Lato_300Light_Italic,
-  Lato_400Regular,
-  Lato_400Regular_Italic,
-  Lato_700Bold,
-  Lato_700Bold_Italic,
-  Lato_900Black,
-  Lato_900Black_Italic,
-} from '@expo-google-fonts/lato';
-import * as SplashScreen from 'expo-splash-screen';
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
+import { useLayoutEffect, useState } from 'react';
 import axios from 'axios';
 import * as Location from 'expo-location';
-// SplashScreen.preventAutoHideAsync();
 
 export default function Home() {
 
@@ -103,28 +88,8 @@ export default function Home() {
 // console.log(address)
 
 
-const [fontsLoaded, fontError] = useFonts({
-    Lato_100Thin,
-    Lato_100Thin_Italic,
-    Lato_300Light,
-    Lato_300Light_Italic,
-    Lato_400Regular,
-    Lato_400Regular_Italic,
-    Lato_700Bold,
-    Lato_700Bold_Italic,
-    Lato_900Black,
-    Lato_900Black_Italic,
-});
 
-const onLayoutRootView = useCallback(async () => {
-  if (fontsLoaded || fontError) {
-    await SplashScreen.hideAsync();
-  }
-}, [fontsLoaded, fontError]);
 
-if (!fontsLoaded && !fontError) {
-  return null;
-}
 
 
 const renderList = ({item}) => (
@@ -180,7 +145,7 @@ const formatDate = (dateString) => {
 
 
     return(
-        <SafeAreaView style={styles.container} onLayout={onLayoutRootView} >
+        <SafeAreaView style={styles.container} >
           {/* <ScrollView contentContainerStyle={styles.scrollView} > */}
           <View style={styles.topSection}>
               <View style={styles.topLeft}>

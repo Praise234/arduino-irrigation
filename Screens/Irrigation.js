@@ -129,11 +129,10 @@ export default function Irrigation() {
   };
 
   const renderItem = ({ item }) => (
-    <View style={{flexDirection: "row", justifyContent: "space-between", width: "87.1%", paddingVertical: 10}}>
-        <Text style={{textAlign: "center", flex:1}}>{item.id}</Text>
+    <View style={{flexDirection: "row", justifyContent: "space-between", width: "82.1%", paddingVertical: 10}}>
+        <Text style={{textAlign: "center", flex:1}}>{item.data.date}</Text>
         <Text style={{textAlign: "center", flex:1}}>{item.data.oldMoistureLevel}</Text>
         <Text style={{textAlign: "center", flex:1}}>{item.data.newMoistureLevel}</Text>
-        <Text style={{textAlign: "center", flex:1}}>{item.data.date}</Text>
     </View>
   );
 
@@ -159,10 +158,9 @@ export default function Irrigation() {
                <>
                <View style = {{flexDirection: "row", justifyContent: "space-between", marginTop: 10}}>
 
-                  <Text style={{textAlign: "center", flex:1}}>ID</Text>
+                  <Text style={{textAlign: "center", flex:1}}>Date</Text>
                   <Text style={{textAlign: "center", flex:1}}>Old Moisture</Text>
                   <Text style={{textAlign: "center", flex:1}}>New Moisture</Text>
-                  <Text style={{textAlign: "center", flex:1}}>Date</Text>
 
                </View>
                 <FlatList
