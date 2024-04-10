@@ -38,11 +38,12 @@
         {
           "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
         }
-      ]
+      ],
+      "expo-font"
     ],
     "extra": {
       "eas": {
-        "projectId": "175e1bf6-8ff4-4bbd-988d-a44a6e9e38c3"
+        "projectId": "aa94a934-5120-4593-b917-cea8d1830e55"
       }
     }
   }
