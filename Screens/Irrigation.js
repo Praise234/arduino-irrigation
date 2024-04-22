@@ -9,7 +9,7 @@ import { Toast } from "../utils/Toast";
 export default function Irrigation() {
     const [modalVisible, setModalVisible] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [fetchLoading, setFetchLoading] = useState(false);
+    // const [fetchLoading, setFetchLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         oldMoistureLevel: '',
@@ -114,10 +114,10 @@ export default function Irrigation() {
 
       // console.log(data)
       
-      setFetchLoading(false);
+      // setFetchLoading(false);
     
     } catch (error) {
-      setFetchLoading(false);
+      // setFetchLoading(false);
       console.error('Error fetching data:', error);
     }
   }, []);
@@ -129,7 +129,7 @@ export default function Irrigation() {
   };
 
   const renderItem = ({ item }) => (
-    <View style={{flexDirection: "row", justifyContent: "space-between", width: "82.1%", paddingVertical: 10}}>
+    <View style={{flexDirection: "row", justifyContent: "space-between", width: "100%", paddingVertical: 10}}>
         <Text style={{textAlign: "center", flex:1}}>{item.data.date}</Text>
         <Text style={{textAlign: "center", flex:1}}>{item.data.oldMoistureLevel}</Text>
         <Text style={{textAlign: "center", flex:1}}>{item.data.newMoistureLevel}</Text>

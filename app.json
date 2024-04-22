@@ -17,11 +17,16 @@
     "ios": {
       "supportsTablet": true
     },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#000000"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION",
@@ -43,7 +48,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "aa94a934-5120-4593-b917-cea8d1830e55"
+        "projectId": "175e1bf6-8ff4-4bbd-988d-a44a6e9e38c3"
       }
     }
   }
