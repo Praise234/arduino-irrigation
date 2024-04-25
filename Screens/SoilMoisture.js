@@ -62,7 +62,7 @@ export default function SoilMoisture() {
               size={320}
               width={15}
               fill={(data !== null ? data.moistureSensor : 0)}
-              tintColor={`${ data !== null && data.moistureSensor < 50 ? "red" : "green"}`}
+              tintColor={`${ data !== null && data.moistureSensor < 60  ? data.moistureSensor < 30 ? "red" : "orange" : "green"}`}
               backgroundColor="#d3d3d3"
               rotation={90}
               lineCap="round"

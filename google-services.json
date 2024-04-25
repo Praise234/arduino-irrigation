@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "715128126830",
+    "project_id": "arduino-9448e",
+    "storage_bucket": "arduino-9448e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715128126830:android:58d89659b2f304f69b957f",
+        "android_client_info": {
+          "package_name": "com.aypraise.ArduinoProject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxqV_JH9Y9OpRz8T4Gl6behzZsoko_bNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

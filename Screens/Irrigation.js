@@ -41,7 +41,12 @@ export default function Irrigation() {
 
       const handleSubmit = () => {
         setLoading(true);
-        fetch('https://irrigation-history-default-rtdb.firebaseio.com/.json?auth=AIzaSyBSCdSKQJbeADC1xsLgyxpT9NI_UkBMpyI', {
+        if(formData.oldMoistureLevel === '' || formData.newMoistureLevel === '' || formData.date === '') {
+          Toast("Please fill all fields");
+          setLoading(false);
+          return;
+        }
+        fetch('https://irrigation-history-default-rtdb.firebaseio.com/.json?auth=' + process.env.IRR_API, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -57,17 +62,19 @@ export default function Irrigation() {
         .then(data => {
           // Handle success response from API
           setLoading(false);
-          if(formData.oldMoistureLevel === '' || formData.newMoistureLevel === '' || formData.date === '') {
-            Toast("Please fill all fields");
-            return;
-          }
+          // if(formData.oldMoistureLevel === '' || formData.newMoistureLevel === '' || formData.date === '') {
+          //   Toast("Please fill all fields");
+          //   return;
+          // }
           console.log('Success:', data);
           setFormData({
             oldMoistureLevel: '',
             newMoistureLevel: '',
             date: ''
           });
-         
+
+          
+          fetchData();
           Toast("Record added successfully");
           setModalVisible(false)
         })
@@ -110,9 +117,16 @@ export default function Irrigation() {
         
         const dataArray = Object.keys(JSON.parse(jsonDataStringified)).map(key => ({ data: JSON.parse(jsonDataStringified)[key], id: key }));
         
-        setData((prevData) => dataArray.length > 0 ? [...dataArray] : []);
+        dataArray.forEach((item, index) => {
+          item.data.index = index;
+        });
+        
 
-      // console.log(data)
+        
+        setData(dataArray.length > 0 ? dataArray.sort((a, b) => (b.data.index - a.data.index)).sort((a,b) => (new Date(b.data.date) - new Date(a.data.date))) : []);
+
+       
+      //  console.log(data)
       
       // setFetchLoading(false);
     
@@ -149,7 +163,7 @@ export default function Irrigation() {
     return (
         <View>
 
-            <View style = {{flexDirection:"column", alignItems: "center", justifyContent: "center", marginTop: "8%", gap:10}}>
+            <View style = {{ flexDirection:"column", alignItems: "center", justifyContent: "center", marginTop: "8%", gap:10}}>
                 <TouchableOpacity style={styles.btn} onPress={()=>setModalVisible(true)} >
                   <Text style={styles.buttonText}>Add New Irrigation Record</Text>
                 </TouchableOpacity>
@@ -163,6 +177,7 @@ export default function Irrigation() {
                   <Text style={{textAlign: "center", flex:1}}>New Moisture</Text>
 
                </View>
+
                 <FlatList
                     data={data}
                     renderItem={renderItem}

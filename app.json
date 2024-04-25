@@ -26,13 +26,13 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION",
         "android.permission.FOREGROUND_SERVICE"
       ],
-      "package": "com.aypraise.ArduinoProject"
+      "package": "com.aypraise.ArduinoProject",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -48,7 +48,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "175e1bf6-8ff4-4bbd-988d-a44a6e9e38c3"
+        "projectId": "f8e35160-25b3-4cb8-b0c1-cb436ac15db6"
       }
     }
   }
