@@ -101,10 +101,10 @@ const getCurrentDate = () => {
 
 const formatDate = (dateString) => {
   // Parse the original date string
-  const [month, day, year] = dateString.split('/').map(Number);
+  const [year, month, day] = dateString.split('/').map(Number);
   
   // Create a Date object
-  const date = new Date(year, month - 1, day);
+  const date = new Date(day, month-1 , year);
 
   // Format the date
   const months = [
@@ -116,6 +116,7 @@ const formatDate = (dateString) => {
 
   return formattedDate;
 };
+
 
 
 
